@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Teleprompter</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                background: #000;
+                color: #fff;
+                font-family: sans-serif;
+                font-size: 2em;
+                overflow: hidden;
+            }
+            #container {
+                position: absolute;
+                width: 100%;
+                text-align: center;
+            }
+            #text {
+                white-space: pre-wrap;
+                line-height: 3.5em;
+                padding: 0 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="text">
+                People who think generative AI is ‘pretty good’ need to admit
+                they’ve been riding the coattails of mediocrity all along. You
+                have to realize most people can’t distinguish human creativity
+                from an LLM fever dream— taste died the moment we traded
+                complexity for convenience. Creatives need to stop howling that
+                AI lacks ‘soul,’ because when the bar is set crushingly low,
+                what’s there to save? Ditch the Folgers and embrace that a
+                faceless algorithm grinding single-origin beans is at least as
+                ‘artisanal’ as so-called masterpieces ever were. If you’re still
+                clutching your nostalgia, you need to confess you never tasted
+                the difference back in the day anyway, and now generative AI is
+                here to prove it.
+            </div>
+        </div>
+        <script>
+            let container = document.getElementById("container");
+            let speed = 30; // Adjust this value to control scroll speed (lower = slower)
+            let scrollPos = window.innerHeight;
+
+            function scrollText() {
+                scrollPos -= 2.5;
+                container.style.top = scrollPos + "px";
+                requestAnimationFrame(scrollText);
+            }
+
+            // Start the scrolling once the page is loaded
+            window.onload = () => {
+                container.style.top = window.innerHeight + "px";
+                scrollText();
+            };
+        </script>
+    </body>
+</html>
